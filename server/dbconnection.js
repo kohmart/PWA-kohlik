@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
+const MONGODB_URI = process.env.MONGODB_URI
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI, () => {
-    console.log('connected to mongo');
-})
+const connectDB = async () => {
+    try {
+        mongoose.set("strictQuery", false);
+        mongoose.connect(MONGODB_URI);
+        console.log('MongoDB connected')
+    } catch (error) {
+        console.log(error)
+    }
+};
