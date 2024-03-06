@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
         type: Object,
         default: {}
     },
-}, { minimize: false });
+}, { minimize: false , strictQuery: false});
 
 UserSchema.statics.findByCredentials = async function (email, password) {
     const user = await User.findOne({ email });

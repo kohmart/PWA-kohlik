@@ -6,7 +6,7 @@ const MessageSchema = new mongoose.Schema({
     date: String,
     time: String,
     socketid: String
-})
+}, {strictQuery: false})
 
 const Message = mongoose.model("Message", MessageSchema);
 
