@@ -24,7 +24,8 @@ function Sidebar() {
 
 
     function getRooms() {
-        fetch('http://localhost:3000//rooms')
+        fetch('https://pwa-chat-server.onrender.com')
+        //fetch('http://localhost:3000//rooms')
             .then((res) => res.json())
             .then((data) => setRooms(data));
     }
